@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "dst-datepicker": {
+      "projectType": "library",
+      "root": "projects/dst-datepicker",
+      "sourceRoot": "projects/dst-datepicker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dst-datepicker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dst-datepicker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dst-datepicker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dst-datepicker/src/test.ts",
+            "tsConfig": "projects/dst-datepicker/tsconfig.spec.json",
+            "karmaConfig": "projects/dst-datepicker/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "datepicker"
