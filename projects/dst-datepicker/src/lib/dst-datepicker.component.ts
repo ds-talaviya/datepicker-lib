@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-dst-datepicker',
-  template: `
-    <p>
-      dst-datepicker works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: 'dst-datepicker',
+  templateUrl: './dst-datepicker.component.html',
+  styleUrls: ['./dst-datepicker.component.scss']
 })
 export class DstDatepickerComponent implements OnInit {
 
