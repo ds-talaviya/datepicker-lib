@@ -1,0 +1,27 @@
+Start Date:<strong> {{startDate}} </strong> <br>
+End Date:<strong> {{endDate}} </strong> <br>
+
+<div class="dropdown">
+    <input type="text" class="dropdown-toggle" [(ngModel)]="dateInput" (click)="toggleDropdown()"
+        placeholder="Select an option" readonly>
+    <div class="dropdown-menu" [class.show]="isDropdownOpen"
+        [ngStyle]="{width:showDatePickerRange ? '700px' : showSingleDatePicker ? '400px' : '150px'}">
+        <div class="date-modes">
+            <a *ngFor="let mode of dateModes" href="javascript:;" class="dropdown-item" (click)="selectOption(mode)"
+                [class.selected]="mode.value === selectedMode">{{mode.name}}</a>
+        </div>
+        <div class="datepicker">
+            <div class="date">
+                <div class="singleDatepicker" *ngIf="!!showSingleDatePicker">
+                  
+                </div>
+                <div class="datepickerRange" *ngIf="!!showDatePickerRange">
+                </div>
+            </div>
+            <div class="actions" *ngIf="!!showSingleDatePicker || !!showDatePickerRange">
+                <button type="button" class="set" (click)="selectAction('setDate')">Done</button>
+                <button type="button" class="reset" (click)="selectAction('cancel')">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
